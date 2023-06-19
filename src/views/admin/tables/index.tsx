@@ -4,7 +4,7 @@ import CheckTable from "./components/CheckTable";
 import tableDataColumns from "./variables/tableDataColumns";
 import tableDataComplex from "./variables/tableDataComplex";
 import DevelopmentTable from "./components/DevelopmentTable";
-import ColumnsTable from "./components/ColumnsTable";
+import ColumnsTable from "../eventManagement/components/ColumnsTable";
 import ComplexTable from "./components/ComplexTable";
 
 const Tables = () => {

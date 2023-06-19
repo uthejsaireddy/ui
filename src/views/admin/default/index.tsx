@@ -22,32 +22,42 @@ const Dashboard = () => {
       <div className="mt-3 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-3 3xl:grid-cols-6">
         <Widget
           icon={<MdBarChart className="h-7 w-7" />}
-          title={"Earnings"}
+          title={"Teachers"}
           subtitle={"$340.5"}
         />
         <Widget
           icon={<IoDocuments className="h-6 w-6" />}
-          title={"Spend this month"}
+          title={"Students"}
           subtitle={"$642.39"}
         />
         <Widget
           icon={<MdBarChart className="h-7 w-7" />}
-          title={"Sales"}
+          title={"Subjects"}
           subtitle={"$574.34"}
         />
         <Widget
           icon={<MdDashboard className="h-6 w-6" />}
-          title={"Your Balance"}
+          title={"Events"}
           subtitle={"$1,000"}
         />
         <Widget
           icon={<MdBarChart className="h-7 w-7" />}
-          title={"New Tasks"}
+          title={"Batches"}
           subtitle={"145"}
         />
         <Widget
           icon={<IoMdHome className="h-6 w-6" />}
-          title={"Total Projects"}
+          title={"Test Papers"}
+          subtitle={"$2433"}
+        />
+        <Widget
+          icon={<IoMdHome className="h-6 w-6" />}
+          title={"Orders"}
+          subtitle={"$2433"}
+        />
+        <Widget
+          icon={<IoMdHome className="h-6 w-6" />}
+          title={"Open Troubles"}
           subtitle={"$2433"}
         />
       </div>

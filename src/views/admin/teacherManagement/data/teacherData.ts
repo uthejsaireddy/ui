@@ -8,7 +8,7 @@ type RowObj = {
 	date: string,
 };
 
-const tableDataColumns: RowObj[] = [
+const teacherData: RowObj[] = [
 	{
 		name: 'One to One',
 		examType: 'K-12 Tutoring',
@@ -48,4 +48,4 @@ const tableDataColumns: RowObj[] = [
 
 ];
 
-export default tableDataColumns;
+export default teacherData;
