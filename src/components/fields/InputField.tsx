@@ -10,8 +10,9 @@ function InputField(props: {
   state?: string;
   disabled?: boolean;
   type?: string;
+  setInput?: any;
 }) {
-  const { label, id, extra, type, placeholder, variant, state, disabled } =
+  const { label, id, extra, type, placeholder, variant, state, disabled, setInput } =
     props;
 
   return (
@@ -25,6 +26,7 @@ function InputField(props: {
         {label}
       </label>
       <input
+      onChange={(e)=>setInput(e.target.value)}
         disabled={disabled}
         type={type}
         id={id}

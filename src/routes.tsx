@@ -30,6 +30,8 @@ import {
 import EventManagement from "views/admin/eventManagement";
 import ResourceLibrary from "views/admin/resourceLibrary";
 import TeacherManagement from "views/admin/teacherManagement";
+import StudentManagement from "views/admin/studentManagement";
+import Subjects from "views/admin/subjects";
 
 const routes = [
   {
@@ -42,7 +44,7 @@ const routes = [
   {
     name: "Teacher Management",
     layout: "/admin",
-    path: "nft-marketplace",
+    path: "teacher-management",
     icon: <MdAccountBox className="h-6 w-6" />,
     // component: <NFTMarketplace />,
     component: <TeacherManagement/>,
@@ -52,8 +54,9 @@ const routes = [
     name: "Student Management",
     layout: "/admin",
     icon: <MdOutlineBadge className="h-6 w-6" />,
-    path: "data-tables",
-    component: <DataTables />,
+    path: "student-management",
+    // component: <DataTables />,
+    component: <StudentManagement/>
   },
   {
     name: "Event Management",
@@ -72,9 +75,10 @@ const routes = [
   {
     name: "Subjects",
     layout: "/admin",
-    path: "profile",
+    path: "subjects",
     icon: <MdOutlineImportContacts className="h-6 w-6" />,
-    component: <Profile />,
+    // component: <Profile />,
+    component: <Subjects/>
   },
   {
     name: "Menus",
@@ -132,13 +136,13 @@ const routes = [
     icon: <MdLayers className="h-6 w-6" />,
     component: <Profile />,
   },
-  // {
-  //   name: "Sign In",
-  //   layout: "/auth",
-  //   path: "sign-in",
-  //   icon: "",
-  //   component: <SignIn />,
-  // },
+  {
+    name: "Sign In",
+    layout: "/auth",
+    path: "sign-in",
+    icon: "",
+    component: <SignIn />,
+  },
   // {
   //   name: "RTL Admin",
   //   layout: "/rtl",

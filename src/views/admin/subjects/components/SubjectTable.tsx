@@ -10,7 +10,7 @@ import {
   SortingState,
   useReactTable,
 } from "@tanstack/react-table";
-import CreatePopUp from "./CreatePopup";
+import AddSubjectModal from "./AddSubjectModal";
 
 type RowObj = {
   name: string;
@@ -23,7 +23,7 @@ type RowObj = {
   actions: any
 };
 
-function TeacherTable(props: { tableData: any }) {
+function SubjectTable(props: { tableData: any }) {
   const { tableData } = props;
   const [sorting, setSorting] = useState<SortingState>([]);
   const [modal, setModal] = useState<boolean>(false);
@@ -161,11 +161,11 @@ function TeacherTable(props: { tableData: any }) {
   }
   return (
     <>
-      {modal && <CreatePopUp setModal={setModal}/>}
+      {modal && <AddSubjectModal setModal={setModal}/>}
       <Card extra={"w-full pb-10 p-4 h-full"}>
         <header className="relative flex items-center justify-between mt-4">
           <div className="text-xl font-bold text-navy-700 dark:text-white">
-            TEACHER MANAGEMENT
+            Subject List
           </div>
           {/* <CardMenu transparent={false} data={'create'}/> */}
           <button className="linear flex items-center justify-center rounded-xl bg-[#007bff] px-4 py-2 text-base font-medium text-white transition duration-200 hover:bg-[#0069d9] active:bg-brand-700 dark:bg-brand-400 dark:text-white dark:hover:bg-brand-300 dark:active:bg-brand-200"
@@ -234,5 +234,5 @@ function TeacherTable(props: { tableData: any }) {
   );
 }
 
-export default TeacherTable;
+export default SubjectTable;
 const columnHelper = createColumnHelper<RowObj>();

@@ -14,7 +14,7 @@ const LargeDropdown = (props: {
     const { label, id, extra, dropdownData, state, disabled, selected, setSelected } = props;
     const [showOptions, setShowOptions] = useState(false)
     return (
-        <div className={`${extra}`}>
+        <div className={extra}>
             <label
                 htmlFor={''}
                 className={`text-sm text-navy-700 dark:text-white ml-1.5 font-medium
@@ -30,8 +30,8 @@ const LargeDropdown = (props: {
                 </div>
                 {
                     showOptions && <ul className="absolute top-14 w-full z-50 cursor-pointer rounded-xl border bg-white p-3 text-sm outline-none">
-                        {dropdownData && dropdownData.map((data)=>{
-                            return <li className="p-2 hover:bg-brand-600 transition duration-200 hover:text-white rounded-xl"
+                        {dropdownData && dropdownData.map((data, i)=>{
+                            return <li className="p-2 hover:bg-[#0069d9] transition duration-200 hover:text-white rounded-xl" key={i}
                             onClick={()=>{
                                 setSelected(data); 
                                 setShowOptions(false)}}

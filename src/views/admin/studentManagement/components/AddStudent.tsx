@@ -4,7 +4,7 @@ import LargeDropdown from 'components/largeDropdown';
 import React, { useState } from 'react'
 import { MdClose } from 'react-icons/md';
 
-const CreatePopUp = (props: any) => {
+const AddStudent = (props: any) => {
     const subjects = ["SAT", "ACT", "MCAT", "K-12 Tutoring", "Default"]
     const genders = ["Male", "Female", "Other"]
 
@@ -17,7 +17,7 @@ const CreatePopUp = (props: any) => {
             <Card extra="w-auto h-auto p-6">
                 <header className="relative flex items-center justify-between">
                     <div className="text-xl font-bold text-navy-700 dark:text-white">
-                        Add Teacher
+                        Add Student
                     </div>
                     <MdClose className='h-6 w-6 cursor-pointer'
                         onClick={() => props.setModal(false)}
@@ -152,4 +152,4 @@ const CreatePopUp = (props: any) => {
     )
 }
 
-export default CreatePopUp
+export default AddStudent
