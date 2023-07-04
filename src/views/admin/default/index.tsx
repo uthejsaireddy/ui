@@ -64,38 +64,38 @@ const Dashboard = () => {
 
       {/* Charts */}
 
-      <div className="mt-5 grid grid-cols-1 gap-5 md:grid-cols-2">
+      {/* <div className="mt-5 grid grid-cols-1 gap-5 md:grid-cols-2">
         <TotalSpent />
         <WeeklyRevenue />
-      </div>
+      </div> */}
 
       {/* Tables & Charts */}
 
       <div className="mt-5 grid grid-cols-1 gap-5 xl:grid-cols-2">
         {/* Check Table */}
-        <div>
+        {/* <div>
           <CheckTable tableData={tableDataCheck} />
-        </div>
+        </div> */}
 
         {/* Traffic chart & Pie Chart */}
 
-        <div className="grid grid-cols-1 gap-5 rounded-[20px] md:grid-cols-2">
+        {/* <div className="grid grid-cols-1 gap-5 rounded-[20px] md:grid-cols-2">
           <DailyTraffic />
           <PieChartCard />
-        </div>
+        </div> */}
 
         {/* Complex Table , Task & Calendar */}
 
-        <ComplexTable tableData={tableDataComplex} />
+        {/* <ComplexTable tableData={tableDataComplex} /> */}
 
         {/* Task chart & Calendar */}
 
-        <div className="grid grid-cols-1 gap-5 rounded-[20px] md:grid-cols-2">
+        {/* <div className="grid grid-cols-1 gap-5 rounded-[20px] md:grid-cols-2">
           <TaskCard />
           <div className="grid grid-cols-1 rounded-[20px]">
             <MiniCalendar />
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

@@ -14,16 +14,29 @@
 }
 
 input.defaultCheckbox::before {
-	content: url(../src/assets/svg/checked.svg); 
+	content: url(../src/assets/svg/checked.svg);
 	color: white;
-	opacity: 0; 
-	height: 16px; 
+	opacity: 0;
+	height: 16px;
 	width: 16px;
-	position: absolute; 
+	position: absolute;
 	left: 50%;
 	transform: translate(-50%, 0px);
-} 
+}
 
-input:checked.defaultCheckbox::before { 
+input:checked.defaultCheckbox::before {
 	opacity: 1;
+}
+
+.inputField {
+	@apply mt-2 flex h-12 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-sm outline-none
+}
+
+.inputLabel {
+	@apply text-sm text-navy-700 font-medium ml-2
+}
+.toast-message{
+	font: inherit;
+	font-family: 'DM Sans', sans-serif !important;
+	border-radius: 13px !important;
 }

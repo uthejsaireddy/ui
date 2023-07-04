@@ -10,16 +10,17 @@ import {
   SortingState,
   useReactTable,
 } from "@tanstack/react-table";
+
 import CreatePopUp from "./CreatePopup";
 
 type RowObj = {
   name: string;
-  examType: string;
-  plan: string;
-  hours: string;
-  available: string;
-  student: string,
-  date: string,
+  subjects: Array<{ name: string, _id: string }>;
+  availableFrom: string;
+  mobileNo: string;
+  isActive: boolean;
+  emailVerified: boolean,
+  status: string,
   actions: any
 };
 
@@ -28,13 +29,16 @@ function TeacherTable(props: { tableData: any }) {
   const [sorting, setSorting] = useState<SortingState>([]);
   const [modal, setModal] = useState<boolean>(false);
 
+  console.log(tableData)
+
   let defaultData = tableData;
+
   const columns = [
 
     columnHelper.accessor("name", {
       id: "name",
       header: () => (
-        <p className="text-sm font-bold text-gray-600 dark:text-white">NAME OF THE BATCH</p>
+        <p className="text-sm font-bold text-gray-600 dark:text-white">NAME</p>
       ),
       cell: (info: any) => (
         <p className="text-sm font-bold text-navy-700 dark:text-white">
@@ -44,11 +48,25 @@ function TeacherTable(props: { tableData: any }) {
     }),
 
 
-    columnHelper.accessor("examType", {
-      id: "examType",
+    columnHelper.accessor("subjects", {
+      id: "subjects",
       header: () => (
         <p className="text-sm font-bold text-gray-600 dark:text-white">
-          EXAM TYPE
+          SUBJECTS
+        </p>
+      ),
+      cell: (info) => (
+        <p className="text-sm font-bold text-navy-700 dark:text-white">
+          {/* {info.getValue()} */}
+        </p>
+      ),
+    }),
+
+    columnHelper.accessor("availableFrom", {
+      id: "availableFrom",
+      header: () => (
+        <p className="text-sm font-bold text-gray-600 dark:text-white">
+          AVAILABLE FROM
         </p>
       ),
       cell: (info) => (
@@ -58,11 +76,11 @@ function TeacherTable(props: { tableData: any }) {
       ),
     }),
 
-    columnHelper.accessor("plan", {
-      id: "plan",
+    columnHelper.accessor("mobileNo", {
+      id: "mobileNo",
       header: () => (
         <p className="text-sm font-bold text-gray-600 dark:text-white">
-          PLAN
+          PHONE
         </p>
       ),
       cell: (info) => (
@@ -72,11 +90,11 @@ function TeacherTable(props: { tableData: any }) {
       ),
     }),
 
-    columnHelper.accessor("hours", {
-      id: "hours",
+    columnHelper.accessor("isActive", {
+      id: "isActive",
       header: () => (
         <p className="text-sm font-bold text-gray-600 dark:text-white">
-          HOURS
+          ACTIVE
         </p>
       ),
       cell: (info) => (
@@ -86,11 +104,11 @@ function TeacherTable(props: { tableData: any }) {
       ),
     }),
 
-    columnHelper.accessor("available", {
-      id: "available",
+    columnHelper.accessor("emailVerified", {
+      id: "emailVerified",
       header: () => (
         <p className="text-sm font-bold text-gray-600 dark:text-white">
-          AVAILABLE
+          EMAIL VERIFICATION
         </p>
       ),
       cell: (info) => (
@@ -100,24 +118,10 @@ function TeacherTable(props: { tableData: any }) {
       ),
     }),
 
-    columnHelper.accessor("student", {
-      id: "student",
+    columnHelper.accessor("status", {
+      id: "status",
       header: () => (
-        <p className="text-sm font-bold text-gray-600 dark:text-white">
-          STUDENT
-        </p>
-      ),
-      cell: (info) => (
-        <p className="text-sm font-bold text-navy-700 dark:text-white">
-          {info.getValue()}
-        </p>
-      ),
-    }),
-
-    columnHelper.accessor("date", {
-      id: "date",
-      header: () => (
-        <p className="text-sm font-bold text-gray-600 dark:text-white">DATE</p>
+        <p className="text-sm font-bold text-gray-600 dark:text-white">STATUS</p>
       ),
       cell: (info) => (
         <p className="text-sm font-bold text-navy-700 dark:text-white">
@@ -141,7 +145,7 @@ function TeacherTable(props: { tableData: any }) {
     }),
   ]; // eslint-disable-next-line
 
-  
+
   const [data, setData] = React.useState(() => [...defaultData]);
 
   const table = useReactTable({
@@ -156,20 +160,20 @@ function TeacherTable(props: { tableData: any }) {
     debugTable: true,
   });
 
-  const handleCreate = () =>{
+  const handleCreate = () => {
     setModal(true)
   }
   return (
     <>
-      {modal && <CreatePopUp setModal={setModal}/>}
-      <Card extra={"w-full pb-10 p-4 h-full"}>
+      {modal && <CreatePopUp setModal={setModal} />}
+      {tableData && <Card extra={"w-full pb-10 p-4 h-full"}>
         <header className="relative flex items-center justify-between mt-4">
           <div className="text-xl font-bold text-navy-700 dark:text-white">
             TEACHER MANAGEMENT
           </div>
           {/* <CardMenu transparent={false} data={'create'}/> */}
           <button className="linear flex items-center justify-center rounded-xl bg-[#007bff] px-4 py-2 text-base font-medium text-white transition duration-200 hover:bg-[#0069d9] active:bg-brand-700 dark:bg-brand-400 dark:text-white dark:hover:bg-brand-300 dark:active:bg-brand-200"
-          onClick={handleCreate}>
+            onClick={handleCreate}>
             <MdAdd className="h-6 w-6" />Create
           </button>
         </header>
@@ -197,7 +201,7 @@ function TeacherTable(props: { tableData: any }) {
                             desc: "",
                           }[header.column.getIsSorted() as string] ?? null}
                         </div>
-                      </th>
+                      </th> 
                     );
                   })}
                 </tr>
@@ -229,7 +233,7 @@ function TeacherTable(props: { tableData: any }) {
             </tbody>
           </table>
         </div>
-      </Card>
+      </Card>}
     </>
   );
 }
