@@ -19,3 +19,7 @@ export const axiosPost = (url: string, data: any) => {
         }
     })
 }
+
+export const axiosPut = () =>{
+    
+}
