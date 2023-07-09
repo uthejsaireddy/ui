@@ -8,11 +8,14 @@ import { ZodType, z } from 'zod'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { ToastContainer, toast } from 'react-toastify'
+import { useAuthHook } from 'hooks/useAuthHook'
 
 
 const TeacherManagement = () => {
   const [teacherdata, setTeacherdata] = useState<any>([])
   const [modal, setModal] = useState<boolean>(false);
+
+  const handleLogout = useAuthHook()
 
   const FormSchema = z.object({
     firstName: z.string().min(2).max(30),
@@ -62,7 +65,8 @@ const TeacherManagement = () => {
         hideProgressBar: true
       });
     } catch (err: any) {
-      console.log(err)
+      console.log(err.response.data.status)
+      if(err.response.data.status === 401) handleLogout()
       toast.error(err.response.data.message, {
         position: toast.POSITION.TOP_RIGHT,
         className: 'toast-message',

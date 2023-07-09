@@ -1,6 +1,5 @@
 import React from "react";
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
-import Navbar from "components/navbar/RTL";
 import Sidebar from "components/sidebar/RTL";
 import Footer from "components/footer/Footer";
 import routes from "routes";
@@ -67,11 +66,7 @@ export default function RTL() {
         >
           {/* Routes */}
           <div className="h-full">
-            <Navbar
-              onOpenSidenav={() => setOpen(true)}
-              brandText={currentRoute}
-              secondary={getActiveNavbar(routes)}
-            />
+            
             <div className="pt-5s mx-auto mb-auto h-full min-h-[84vh] p-2 md:pr-2">
               <Routes>
                 {getRoutes(routes)}
