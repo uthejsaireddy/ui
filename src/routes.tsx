@@ -31,6 +31,8 @@ import ResourceLibrary from "views/admin/resourceLibrary";
 import TeacherManagement from "views/admin/teacherManagement";
 import StudentManagement from "views/admin/studentManagement";
 import Subjects from "views/admin/subjects";
+import Menus from "views/admin/menus";
+
 
 const routes = [
   {
@@ -82,9 +84,9 @@ const routes = [
   {
     name: "Menus",
     layout: "/admin",
-    path: "profile",
+    path: "menus",
     icon: <MdOutlineDialpad className="h-6 w-6" />,
-    component: <Profile />,
+    component: <Menus />,
   },
   {
     name: "Approvals",
