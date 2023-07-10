@@ -9,7 +9,6 @@ const AddMenu = (props: any) => {
     const genders = ["Male", "Female", "Other"]
 
     const [subject, setSubject] = useState<string>("SAT")
-
     const [gender, setGender] = useState<string>("---Select Gender---")
 
 

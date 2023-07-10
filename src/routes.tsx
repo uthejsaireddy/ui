@@ -31,6 +31,7 @@ import ResourceLibrary from "views/admin/resourceLibrary";
 import TeacherManagement from "views/admin/teacherManagement";
 import StudentManagement from "views/admin/studentManagement";
 import Subjects from "views/admin/subjects";
+
 import Menus from "views/admin/menus";
 
 
@@ -48,7 +49,7 @@ const routes = [
     path: "teacher-management",
     icon: <MdAccountBox className="h-6 w-6" />,
     // component: <NFTMarketplace />,
-    component: <TeacherManagement/>,
+    component: <TeacherManagement />,
     secondary: true,
   },
   {
@@ -57,14 +58,14 @@ const routes = [
     icon: <MdOutlineBadge className="h-6 w-6" />,
     path: "student-management",
     // component: <DataTables />,
-    component: <StudentManagement/>
+    component: <StudentManagement />
   },
   {
     name: "Event Management",
     layout: "/admin",
     path: "event-management",
     icon: <MdCalendarMonth className="h-6 w-6" />,
-    component: <EventManagement/>,
+    component: <EventManagement />,
   },
   {
     name: "Resource Library",
@@ -79,7 +80,7 @@ const routes = [
     path: "subjects",
     icon: <MdOutlineImportContacts className="h-6 w-6" />,
     // component: <Profile />,
-    component: <Subjects/>
+    component: <Subjects />
   },
   {
     name: "Menus",

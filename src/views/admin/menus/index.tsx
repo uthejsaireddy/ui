@@ -7,6 +7,8 @@ import AddMenu from "./components/AddMenu";
 
 const Menus = () => {
 
+
+
   const [menusData, setMenusData] = useState<any>([])
   const [menuModal, setMenuModal] = useState<boolean>(false);
 

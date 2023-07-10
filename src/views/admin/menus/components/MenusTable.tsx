@@ -9,10 +9,6 @@ import { useEffect } from 'react';
 const MenusTable = (props: any) => {
     const { menusData, modelHandler } = props;
 
-    // useEffect(() => {
-    //     console.log(menusData)
-    // }, [menusData])
-
 
     return <>        <>
         <Card extra={"w-full pb-10 p-4 h-full"}>
